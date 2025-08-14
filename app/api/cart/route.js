@@ -7,7 +7,7 @@ let cart = [];
  * @route GET /api/cart
  * @description Returns the current contents of the cart.
  * @access Public
- * @returns {Array} List of products in the cart with their quantity (`cant`).
+ * @returns {Array} List of products in the cart with their quantity (`amount`).
  */
 export async function GET() {
   return NextResponse.json(cart);
@@ -33,7 +33,7 @@ export async function POST(request) {
       if (p.id === id) {
         return {
           ...p,
-          cant: p.cant + 1
+          amount: p.amount + 1
         }
       }
       return p;
@@ -49,7 +49,7 @@ export async function POST(request) {
 
     cart.push({
       ...product,
-      cant: 1
+      amount: 1
     });
   }
 
