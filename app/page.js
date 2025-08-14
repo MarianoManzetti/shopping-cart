@@ -5,6 +5,7 @@ import useCart from '@/features/hooks/useCart';
 
 import ProductView from '@/features/components/products/ProductView';
 import CartView from '@/features/components/cart/CartView';
+import BestCombination from '@/features/components/products/BestCombination';
 
 import { CircularProgress, Alert, AlertTitle } from '@mui/material';
 
@@ -47,6 +48,8 @@ export default function HomePage() {
 
         <div className="md:col-span-1 sticky top-8 self-start flex flex-col">
           <CartView cart={cart} />
+
+          <BestCombination products={products} />
         </div>
       </div>
     </div>
